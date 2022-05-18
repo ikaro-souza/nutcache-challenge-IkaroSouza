@@ -1,0 +1,40 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch app (Chrome)",
+      "preLaunchTask": "launch app",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}\\app"
+    },
+    {
+      "args": ["${workspaceFolder}\\api\\src\\main.ts"],
+      "autoAttachChildProcesses": true,
+      "console": "integratedTerminal",
+      "cwd": "${workspaceRoot}\\api",
+      "envFile": "${workspaceFolder}/.env",
+      "name": "Launch API",
+      "request": "launch",
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "sourceMaps": true,
+      "type": "node"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch application",
+      "configurations": ["Launch API", "Launch app (Chrome)"]
+    }
+  ]
+}
