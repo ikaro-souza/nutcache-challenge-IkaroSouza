@@ -193,10 +193,10 @@ export const EmployeeDialogView: React.FC<EmployeeDialogViewProps> = ({
               <div className="border-t p-4">
                 <p
                   className={`font-medium text-center ${
-                    error ? 'text-red-500' : ''
+                    loading ? '' : 'text-red-500'
                   } text-sm`}
                 >
-                  {error ?? 'Please wait...'}
+                  {loading ? 'Please wait...' : error}
                 </p>
               </div>
             )}

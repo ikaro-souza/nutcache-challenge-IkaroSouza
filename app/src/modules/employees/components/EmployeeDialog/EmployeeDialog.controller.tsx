@@ -50,11 +50,12 @@ export const EmployeeDialog: React.FC = () => {
     if (createQuery.error || updateQuery.error) {
       const _error = (createQuery.error ?? updateQuery.error) as any
 
-      // api request validation message
       let responseMessage = _error.response?.data?.message
-      // axios message
+      // api request validation message
       if (responseMessage && typeof responseMessage !== 'string')
-        responseMessage = _error.response?.message
+        responseMessage = responseMessage.join(', ')
+      // axios message
+      else responseMessage = _error.response?.message
 
       dispatchState({
         type: EmployeeDialogFormActions.SEND_REQUEST_ERROR,
