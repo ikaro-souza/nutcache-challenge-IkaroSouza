@@ -34,7 +34,7 @@ You can run either the debug builds or the production builds:
 
 - Debug: Open a terminal in the app folder and type in the command `yarn dev` or `npm run dev`. Assuming you've already opened the project on VS Code, click on the bug icon and select the Launch application option of the dropdown menu on the top-left side of the UI, press F5 and it will start the build of the back-end and attach the debuggers for both the front and back-end processes.
 
-  OBS: If you see the message `There are no employees registered.` it's probably because the back-end was still being built and the request to it timed out, you can either wait for the request to be made again or just refresh the page.
+  OBS: If you see the message `Something went wrong and we could not get the employees records` it's probably because the back-end was still being built and the request to it timed out, you can either wait for the request to be made again or just refresh the page.
 
 - Production: Open a terminal in the api folder and type in the command `yarn build; yarn start:prod` or `npm run build; npm run start:prod`.
   Open a terminal in the app folder and type in the command `yarn build; yarn preview` or `npm run build; npm run preview`.
