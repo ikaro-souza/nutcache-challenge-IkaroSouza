@@ -55,7 +55,7 @@ export const RemoveEmployeeDialogView: React.FC<
                     Close
                   </Button>
                   <Button
-                    className="bg-transparent font-semibold text-base text-teal-400 disabled:text-gray-400"
+                    className="bg-transparent font-semibold text-base text-red-500 disabled:text-gray-400"
                     disabled={loading}
                     type="submit"
                   >
