@@ -1,0 +1,13 @@
+@import './assets/css/reset.css';
+@import './assets/css/normalize.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', 'Segoe UI', -apple-system,
+    sans-serif;
+  font-size: 16pt;
+}
