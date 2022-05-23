@@ -6,9 +6,9 @@ A detailed explanation about some of the choices I made while building the proje
 
 ### The API
 
-The API was built with [NestJS](https://nestjs.com) because it is the most elegant backend framework in the Javascript ecosystem. Its architecture is second to no other and it helps in everyway possible in quickly implementing an API that follows SOLID principles and design patterns like Inversion of Dependency and Decorator(heavy use of it).
+The API was built with [NestJS](https://nestjs.com) because it is the most elegant backend framework in the Javascript ecosystem. Its architecture is second to no other and it helps you in every way possible to quickly implement an API that follows SOLID principles and design patterns like [Inversion of Dependency](https://www.baeldung.com/solid-principles#d) and [Decorator(heavy use of it](https://refactoring.guru/design-patterns/decorator).
 To exemplify: To declare which classes will be instantiated by the DI Container you just need to put the class in the module's providers array and mark such classes as injectable and you do this using the @Injectable decorator on the class.
-This example shows how, by using the decorator design pattern, Nest obeys the Open-Closed Principle because you don't need to imperatively inject classes in the DI - as you need to in C# for example - and avoid issues like the one the Liskov Substitution Principal aims to solve, with just 2 lines of code.
+This example shows how, by using the decorator design pattern, Nest obeys the [Open-Closed Principle](https://www.baeldung.com/solid-principles#o) because you don't need to imperatively inject classes in the DI - as you need to in C# for example - and avoid issues like the one the [Liskov Substitution Principle](https://www.baeldung.com/solid-principles#l) aims to solve, with just 2 lines of code.
 
 ![nest module declaration](https://github.com/ikaro-souza/nutcache-challenge-IkaroSouza/blob/main/readme_assets/module.png)
 ![nest injectable class](https://github.com/ikaro-souza/nutcache-challenge-IkaroSouza/blob/main/readme_assets/service.png)
