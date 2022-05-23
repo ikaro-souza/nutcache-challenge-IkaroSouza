@@ -59,7 +59,7 @@ export const RemoveEmployeeDialogView: React.FC<
                     disabled={loading}
                     type="submit"
                   >
-                    Save Changes
+                    Remove employee
                   </Button>
                 </div>
               </div>
