@@ -1,9 +1,14 @@
-import { Expose, Type } from 'class-transformer'
+import { Exclude, Expose, Type } from 'class-transformer'
 import { Gender, Team } from '../models'
 
 export class Employee {
-  @Expose({ name: '_id', toClassOnly: true })
-  readonly id: string
+  @Exclude({ toPlainOnly: true })
+  readonly _id: string
+
+  @Expose({ name: 'id' })
+  get id() {
+    return this._id
+  }
   /**@property
    * Employee's birth date
    */

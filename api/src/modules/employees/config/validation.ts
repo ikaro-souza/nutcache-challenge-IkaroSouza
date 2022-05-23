@@ -21,7 +21,7 @@ export const IsValidCpf =
       target: object.constructor,
       validator: {
         defaultMessage: (args) => {
-          const validationMessage = validationOptions.message
+          const validationMessage = validationOptions?.message
           if (typeof validationMessage === 'string') return validationMessage
           else if (typeof validationMessage === 'function')
             return validationMessage(args)

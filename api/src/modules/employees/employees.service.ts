@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common'
+import { instanceToPlain } from 'class-transformer'
 import { CreateEmployeeDto, UpdateEmployeeDto } from './dto'
 import { EmployeesRepository } from './employees.repository'
 
@@ -12,7 +13,8 @@ export class EmployeesService {
 
   async findAll() {
     try {
-      return await this._repository.findAll()
+      const employees = await this._repository.findAll()
+      return employees.map((e) => instanceToPlain(e))
     } catch (error) {
       throw error
     }
@@ -20,7 +22,8 @@ export class EmployeesService {
 
   async findOne(id: string) {
     try {
-      return await this._repository.findById(id)
+      const employee = await this._repository.findById(id)
+      return instanceToPlain(employee)
     } catch (error) {
       throw error
     }

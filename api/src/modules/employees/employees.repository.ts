@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import axios, { AxiosError } from 'axios'
-import { plainToClass } from 'class-transformer'
+import { plainToInstance } from 'class-transformer'
 import { configKeys } from 'src/config/configuration'
 import { CreateEmployeeDto, UpdateEmployeeDto } from './dto'
 import { Employee } from './entities'
@@ -30,7 +30,7 @@ export class EmployeesRepository {
   async findAll(): Promise<Employee[]> {
     try {
       const response = await axios.get<Employee[]>(this.apiUrl)
-      return response.data
+      return plainToInstance(Employee, response.data)
     } catch (error) {
       throw error
     }
@@ -54,7 +54,7 @@ export class EmployeesRepository {
   async findById(id: string): Promise<Employee> {
     try {
       const response = await axios.get(`${this.apiUrl}/${id}`)
-      return plainToClass(Employee, response.data)
+      return plainToInstance(Employee, response.data)
     } catch (error) {
       const axiosError = error as AxiosError
 
