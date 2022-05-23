@@ -27,7 +27,7 @@ There are 4 main aspects to this web app for me to explain so I'm going to list 
 
 You just need to do 2 things before building and running the application.
 
-1. Create an API key: The back-end uses the services of [Crud crud](https://crudcrud.com) to mock a database. You just need to click the link, grab the url showed in the website and paste it to the `API_URL` variable in the .env file in the api folder. (Optional) You can change the port used by the back-end too, just set the desired port number on the `PORT` variable in the .env file, but you'll need to change it in the `VITE_API_URL` in the .env file in the app folder as well.
+1. Create an API key: The back-end uses the services of [Crud crud](https://crudcrud.com) to mock a database. You just need to click the link, grab the url showed in the website and paste it to the `CRUD_API_URL` variable in the .env file in the api folder. (Optional) You can change the port used by the back-end too, just set the desired port number on the `PORT` variable in the .env file, but you'll need to change it in the `VITE_API_URL` in the .env file in the app folder as well.
 2. With the api key and port set, open a terminal in the app folder, another one in the api folder and on both type in the command `yarn` or `npm install`.
 
 You can run either the debug builds or the production builds:
