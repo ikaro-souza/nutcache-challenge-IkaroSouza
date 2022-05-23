@@ -106,11 +106,11 @@ export const EmployeeDialogView: React.FC<EmployeeDialogViewProps> = ({
                   id="gender"
                   name="gender"
                   value={gender}
-                  defaultValue={undefined}
+                  defaultValue={-1}
                   onChange={onGenderChange}
                 >
                   <>
-                    <option value={undefined}>Please select a gender</option>
+                    <option value={-1}>Please select a gender</option>
                     {getNumericEnumValues(Gender).map((g) => (
                       <option key={g} value={g}>
                         {genderDisplayName(g)}
@@ -175,11 +175,11 @@ export const EmployeeDialogView: React.FC<EmployeeDialogViewProps> = ({
                   id="team"
                   name="team"
                   value={team}
-                  defaultValue={undefined}
+                  defaultValue={-1}
                   onChange={onTeamChange}
                 >
                   <>
-                    <option>Please Select a team (optional)</option>
+                    <option value={-1}>Please Select a team (optional)</option>
                     {getNumericEnumValues(Team).map((t) => (
                       <option className="w-fit" key={t} value={t}>
                         {teamDisplayName(t)}

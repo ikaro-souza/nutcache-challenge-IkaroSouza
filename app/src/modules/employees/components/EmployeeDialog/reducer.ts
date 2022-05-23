@@ -1,15 +1,13 @@
 import { maskCpf } from 'modules/common/masks'
-import { Gender, Team } from 'modules/employees/models'
-import moment from 'moment'
 
 export interface EmployeeDialogForm {
-  birthDate?: Date
+  birthDate: string
   cpf: string
   email: string
-  gender?: Gender
+  gender: number
   name: string
-  startDate?: Date
-  team?: Team
+  startDate: string
+  team?: number
 }
 
 export interface EmployeeDialogState {
@@ -23,10 +21,10 @@ export const initialState: EmployeeDialogState = {
     cpf: '',
     email: '',
     name: '',
-    birthDate: undefined,
-    gender: undefined,
-    startDate: undefined,
-    team: undefined,
+    birthDate: '',
+    gender: -1,
+    startDate: '',
+    team: -1,
   },
 }
 
@@ -65,7 +63,7 @@ export const reducer = (
         ...state,
         form: {
           ...state.form,
-          birthDate: moment(action.payload).toDate(),
+          birthDate: action.payload,
         },
       }
 
@@ -93,7 +91,7 @@ export const reducer = (
         /** It needs to be converted to a number so it can be accepted by the API */
         form: {
           ...state.form,
-          gender: action.payload ? Number(action.payload) : undefined,
+          gender: Number(action.payload),
         },
       }
 
@@ -111,7 +109,7 @@ export const reducer = (
         ...state,
         form: {
           ...state.form,
-          startDate: moment(action.payload).toDate(),
+          startDate: action.payload,
         },
       }
 
@@ -121,7 +119,7 @@ export const reducer = (
         /** It needs to be converted to a number so it can be accepted by the API */
         form: {
           ...state.form,
-          team: action.payload === '' ? undefined : Number(action.payload),
+          team: action.payload === '-1' ? undefined : Number(action.payload),
         },
       }
 
