@@ -57,7 +57,7 @@ export const RemoveEmployeeDialogView: React.FC<
                   <Button
                     className="bg-transparent font-semibold text-base text-red-500 disabled:text-gray-400"
                     disabled={loading}
-                    type="submit"
+                    onClick={onRemoveClick}
                   >
                     Remove employee
                   </Button>
