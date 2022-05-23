@@ -50,17 +50,13 @@ export const TableProvider: React.FC<React.PropsWithChildren<unknown>> = ({
     if (!error) return
 
     const _error = error as any
-    const errorMessage = _error.response?.data?.message
+    // api request validation message
+    let responseMessage = _error.response?.data?.message
+    // axios message
+    if (responseMessage && typeof responseMessage !== 'string')
+      responseMessage = _error.response?.message
 
-    dispatch(
-      getEmployeesError(
-        (typeof errorMessage === 'string'
-          ? errorMessage
-          : errorMessage.join(', ')) ??
-          _error.response?.message ??
-          _error?.message,
-      ),
-    )
+    dispatch(getEmployeesError(responseMessage ?? _error?.message))
   }, [isError, error])
 
   return (

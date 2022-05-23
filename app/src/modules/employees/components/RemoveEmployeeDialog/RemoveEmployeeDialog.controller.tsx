@@ -23,15 +23,13 @@ export const RemoveEmployeeDialog: React.FC = () => {
     if (!error) return
 
     const _error = error as any
-    const responseMessage = _error.response?.data?.message
+    // api request validation message
+    let responseMessage = _error.response?.data?.message
+    // axios message
+    if (responseMessage && typeof responseMessage !== 'string')
+      responseMessage = _error.response?.message
 
-    setErrorMessage(
-      (typeof responseMessage === 'string'
-        ? responseMessage
-        : responseMessage.join(', ')) ??
-        _error.response?.message ??
-        _error?.message,
-    )
+    setErrorMessage(responseMessage ?? _error?.message)
   }, [error])
 
   React.useEffect(() => {
