@@ -47,7 +47,7 @@ export const RemoveEmployeeDialogView: React.FC<
                 {/*footer*/}
                 <div className="border-t flex flex-col items-stretch p-4 md:px-8">
                   <Button
-                    className="bg-transparent text-base text-black"
+                    className="bg-transparent text-base text-black disabled:text-gray-400"
                     disabled={loading}
                     type="button"
                     onClick={() => onClose()}
@@ -55,12 +55,11 @@ export const RemoveEmployeeDialogView: React.FC<
                     Close
                   </Button>
                   <Button
-                    className="bg-transparent font-semibold text-base text-red-500"
+                    className="bg-transparent font-semibold text-base text-teal-400 disabled:text-gray-400"
                     disabled={loading}
                     type="submit"
-                    onClick={onRemoveClick}
                   >
-                    Remove employee
+                    Save Changes
                   </Button>
                 </div>
               </div>

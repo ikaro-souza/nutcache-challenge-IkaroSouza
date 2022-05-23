@@ -203,7 +203,7 @@ export const EmployeeDialogView: React.FC<EmployeeDialogViewProps> = ({
             {/*footer*/}
             <div className="border border-t border-solid flex flex-col items-stretch p-4 md:px-8">
               <Button
-                className="bg-transparent text-base text-black"
+                className="bg-transparent text-base text-black disabled:text-gray-500"
                 disabled={loading}
                 type="button"
                 onClick={() => onClose()}
@@ -211,7 +211,7 @@ export const EmployeeDialogView: React.FC<EmployeeDialogViewProps> = ({
                 Close
               </Button>
               <Button
-                className="bg-transparent font-semibold text-base text-teal-400"
+                className="bg-transparent font-semibold text-base text-teal-400 disabled:text-gray-500"
                 disabled={loading}
                 type="submit"
               >
