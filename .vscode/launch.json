@@ -6,7 +6,6 @@
   "configurations": [
     {
       "name": "Launch app (Chrome)",
-      "preLaunchTask": "launch app",
       "request": "launch",
       "type": "chrome",
       "url": "http://localhost:3000",
@@ -20,6 +19,7 @@
       "envFile": "${workspaceFolder}/.env",
       "name": "Launch API",
       "request": "launch",
+
       "runtimeArgs": [
         "--nolazy",
         "-r",
