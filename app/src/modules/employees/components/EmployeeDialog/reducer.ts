@@ -24,7 +24,6 @@ export const initialState: EmployeeDialogState = {
     birthDate: '',
     gender: -1,
     startDate: '',
-    team: -1,
   },
 }
 
